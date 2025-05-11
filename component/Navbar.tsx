@@ -8,15 +8,24 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [visible, setVisible] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [prevScrollY, setPrevScrollY] = useState(0);
+    const [showNavbar, setShowNavbar] = useState(true);
 
     useEffect(() => {
        const handleScroll = () => {
+        const currentScrollY = window.scrollY;
+        if(currentScrollY < prevScrollY) {
+          setShowNavbar(true);
+        } else if(currentScrollY > prevScrollY && currentScrollY >100) {
+          setShowNavbar(false);
+        }
             if(window.scrollY > 10){
                 setScrolled(true);
-                setVisible(false);
             } else  {
                 setScrolled(false);
+                setShowNavbar(false);
             }
+            setPrevScrollY(currentScrollY);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
@@ -68,11 +77,7 @@ const Navbar = () => {
                 <Printer size={18} />
                 <span>Servicios</span>
               </Link>
-              <Link href="#" className="flex items-center space-x-1 hover:text-blue-400 transition-colors">
-                <FileText size={18} />
-                <span>Portafolio</span>
-              </Link>
-              <Link href="#" className="flex items-center space-x-1 hover:text-blue-400 transition-colors">
+              <Link href="/contact" className="flex items-center space-x-1 hover:text-blue-400 transition-colors">
                 <Phone size={18} />
                 <span>Contacto</span>
               </Link>
@@ -98,22 +103,18 @@ const Navbar = () => {
         >
           <div className="bg-gray-800 py-4">
             <div className="container mx-auto px-4 flex flex-col space-y-4">
-              <a href="#" className="flex items-center space-x-2 px-4 py-2 rounded hover:bg-gray-700">
+              <Link href="/" className="flex items-center space-x-2 px-4 py-2 rounded hover:bg-gray-700">
                 <Home size={18} />
                 <span>Inicio</span>
-              </a>
-              <a href="#" className="flex items-center space-x-2 px-4 py-2 rounded hover:bg-gray-700">
+              </Link>
+              <Link href="/services" className="flex items-center space-x-2 px-4 py-2 rounded hover:bg-gray-700">
                 <Printer size={18} />
                 <span>Servicios</span>
-              </a>
-              <a href="#" className="flex items-center space-x-2 px-4 py-2 rounded hover:bg-gray-700">
-                <FileText size={18} />
-                <span>Portafolio</span>
-              </a>
-              <a href="#" className="flex items-center space-x-2 px-4 py-2 rounded hover:bg-gray-700">
+              </Link>
+              <Link href="/contact" className="flex items-center space-x-2 px-4 py-2 rounded hover:bg-gray-700">
                 <Phone size={18} />
                 <span>Contacto</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

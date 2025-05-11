@@ -48,7 +48,7 @@ const Services = () => {
           specs: "Lona front 13oz, impresión eco-solvente, 0.85 x 2m",
           price: "Desde S/. 120 por unidad",
           isVertical: true,
-          image: "/api/placeholder/400/600"
+          image: "/services/banner04.jpg"
         },
         {
           id: 4,
@@ -57,8 +57,8 @@ const Services = () => {
           description: "Banner horizontal para exteriores con ojales reforzados.",
           specs: "Lona banner 13oz, impresión eco-solvente, 2 x 1m",
           price: "Desde S/. 90 por unidad",
-          isVertical: false,
-          image: "/api/placeholder/600/400"
+          isVertical: true,
+          image: "/services/banner05.jpg"
         },
         {
           id: 5,
@@ -67,8 +67,8 @@ const Services = () => {
           description: "Tazas cerámicas con logo corporativo para regalo empresarial.",
           specs: "Taza cerámica blanca 11oz, impresión por sublimación",
           price: "Desde S/. 15 por unidad (mín. 20 unidades)",
-          isVertical: false,
-          image: "/api/placeholder/600/400"
+          isVertical: true,
+          image: "/services/mercha.jpg"
         },
         {
           id: 6,
@@ -78,7 +78,7 @@ const Services = () => {
           specs: "Lapicero plástico, impresión tampográfica 1 color",
           price: "Desde S/. 1.50 por unidad (mín. 100 unidades)",
           isVertical: true,
-          image: "/api/placeholder/400/600"
+          image: "/services/triptico.jpg"
         },
         {
           id: 7,
@@ -87,8 +87,8 @@ const Services = () => {
           description: "Carpeta con bolsillo interior y troquel para tarjeta de presentación.",
           specs: "Cartulina couché 300g, impresión full color, plastificado mate",
           price: "Desde S/. 350 x 100 unidades",
-          isVertical: false,
-          image: "/api/placeholder/600/400"
+          isVertical: true,
+          image: "/services/libro01.jpg"
         },
         {
           id: 8,
@@ -98,7 +98,7 @@ const Services = () => {
           specs: "Papel couché 300g, impresión full color, plastificado mate",
           price: "Desde S/. 120 x 1000 unidades",
           isVertical: true,
-          image: "/api/placeholder/400/600"
+          image: "/services/tarjeta01.jpg"
         },
         {
           id: 9,
@@ -107,8 +107,8 @@ const Services = () => {
           description: "Tríptico con información detallada de productos o servicios.",
           specs: "Papel couché 115g, impresión full color ambas caras",
           price: "Desde S/. 220 x 100 unidades",
-          isVertical: false,
-          image: "/api/placeholder/600/400"
+          isVertical: true,
+          image: "/services/bolsa01.jpg"
         },
         {
           id: 10,
@@ -127,8 +127,8 @@ const Services = () => {
           description: "Calendario personalizado con base triangular para escritorio.",
           specs: "Base en cartulina 300g, hojas en couché 150g, espiral metálico",
           price: "Desde S/. 8 por unidad (mín. 50 unidades)",
-          isVertical: false,
-          image: "/api/placeholder/600/400"
+          isVertical: true,
+          image: "/services/etiqueta01.jpg"
         },
         {
           id: 12,
@@ -137,8 +137,8 @@ const Services = () => {
           description: "Banner microperforado para fachadas y estructuras exteriores.",
           specs: "Lona mesh 9oz, impresión eco-solvente, tamaño personalizado",
           price: "Desde S/. 28 por m²",
-          isVertical: false,
-          image: "/api/placeholder/600/400"
+          isVertical: true,
+          image: "/services/libros02.jpg"
         }
       ];
     
@@ -269,7 +269,7 @@ const Services = () => {
         {isModalOpen && selectedItem && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75 backdrop-blur-sm">
             <div 
-              className="relative bg-gray-900 rounded-xl overflow-hidden max-w-4xl w-full max-h-[90vh] shadow-2xl"
+              className="relative bg-gray-900 rounded-xl overflow-auto md:overflow-hidden max-w-4xl w-full max-h-[90vh] shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               <button 
